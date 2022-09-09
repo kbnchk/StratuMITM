@@ -4,7 +4,7 @@
   "description": "Stratum MITM server",
   "main": "server.js",
   "scripts": {
-    "test": "echo 'Not implemented';"
+   "start": "nodemon -x 'node server.js || touch server.js'" 
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,6 @@
   },
   "homepage": "https://github.com/jabbany/StratuMITM#readme",
   "dependencies": {
-    "colors": "^1.1.2"
+    "colors": "^1.4.0"
   }
 }

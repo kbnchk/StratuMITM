@@ -59,3 +59,12 @@ resolving issues. This software does not contain any DevFees and is written in
 JavaScript so you can audit that it actually does not.
 
 
+
+## kbnchk docker instructions
+Now app supports CONFIG env varible to define which config file to load and have Dockerfile to build image.
+So you can add several config files before build docker images to select when running container.
+If no config is set in CONFIG varible it uses defaultconfig.json.
+Dockerfile and package.json changed to support automatic server restart on crash with nodemon.
+Usage:
+docker build . -t <image_name>
+docker run -p <port>:<port> -d --name <name> -e "CONFIG=<config>" <image_name>

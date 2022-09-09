@@ -7,8 +7,7 @@ var logger = require('./lib/logger');
 var confreader = require('./lib/config');
 
 // Load config
-var args = process.argv.slice(2);
-var configfile = args[0];
+var configfile = process.env.CONFIG
 var config = (new confreader.ConfigReader(confreader.FALLBACK_CONFIG)).read( 
 	configfile, 'defaultconfig.json');
 
