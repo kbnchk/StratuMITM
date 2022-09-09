@@ -1,0 +1,26 @@
+{
+  "ports": [1488],
+  "logger": {
+    "mode": "console",
+    "params": {
+      "color": true,
+      "truncate": {
+        "mode": "lsb",
+        "length": 8
+      }
+    }
+  },
+  "rewriter": "./lib/rewrite/rewrite.credentials.js",
+  "params": {
+    "log": ["events"],
+    "remote": {
+      "host": "gate.emcd.io",
+      "port": 3333,
+      "retry": 0
+    },
+    "credentials": {
+      "user": "kbnchk.worker",
+      "pass": "123"
+    }
+  }
+}

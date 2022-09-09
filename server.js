@@ -6,10 +6,13 @@ var delegator = require('./lib/delegator');
 var logger = require('./lib/logger');
 var confreader = require('./lib/config');
 
-// Create the log
-var config = (new confreader.ConfigReader(confreader.FALLBACK_CONFIG)).read(
-	'config.json', 'config.sample.json');
+// Load config
+var args = process.argv.slice(2);
+var configfile = args[0];
+var config = (new confreader.ConfigReader(confreader.FALLBACK_CONFIG)).read( 
+	configfile, 'defaultconfig.json');
 
+// Create the log
 var log = new logger.Logger([], config.logger ? config.logger.params : null);
 var rewriterClass = require(config.rewriter);
 
